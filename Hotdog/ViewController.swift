@@ -10,6 +10,7 @@ import UIKit
 import CoreML
 import Vision
 
+
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
@@ -37,6 +38,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         imagepicker.dismiss(animated: true, completion: nil)
     }
+    
     
     func detect(image:CIImage){
         guard let model = try? VNCoreMLModel(for: Inceptionv3().model) else {
